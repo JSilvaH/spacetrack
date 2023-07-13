@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">SpaceTrack</string>
+    <string name="name_launch">name</string>
+    <string name="crew_members">crew members</string>
+    <string name="flight_number">Flight number</string>
+    <string name="launch_success">success</string>
+    <string name="launched">Launched</string>
+    <string name="cores">Cores</string>
+    <string name="height">Height</string>
+    <string name="weight">Weight</string>
+    <string name="status">Status</string>
+    <string name="title_activity_rocket_deatil">RocketDeatilActivity</string>
+    <string name="title_activity_rocket_screen_detail">RocketScreenDetail</string>
+</resources>
