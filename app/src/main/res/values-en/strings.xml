@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SpaceTrack</string>
+    <string name="name_launch">Name</string>
+    <string name="crew_members">Crew members</string>
+    <string name="flight_number">Flight number</string>
+    <string name="launch_success">Success</string>
+    <string name="launched">Launched</string>
+    <string name="cores">Cores</string>
+    <string name="height">Height</string>
+    <string name="weight">Weight</string>
+    <string name="status">Status</string>
+    <string name="title_activity_rocket_screen_detail">Rocket Detail</string>
+    <string name="title_activity_rocket_deatil">Rocket detail</string>
+    <string name="hellow">Welcome</string>
+    <string name="launches">"Launches SpacesX "</string>
+    <string name="description">Description image</string>
+    <string name="members">%1$s crew members</string>
+    <string name="date_launch">Date:</string>
+    <string name="lastlaunches">Latest launch</string>
+    <string name="nextlaunch">Next launch</string>
+    <string name="description_astronauts">Cre member photo</string>
+    <string name="name_member">Name :</string>
+    <string name="agency">"Agency: "</string>
+    <string name="missions">"Missions:  "</string>
+    <string name="dragon">Dragon</string>
+    <string name="mass">Mass</string>
+    <string name="diameter">Diameter</string>
+    <string name="active">Active</string>
+    <string name="inactive">Inactive</string>
+    <string name="launchpads">Launchpads</string>
+</resources>

@@ -1,6 +1,7 @@
 package com.silvacomp.spacetrack.ui.components
 
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Text
@@ -20,8 +21,11 @@ fun BottomBarSpaceTrack(navController: NavController) {
     var selectedItem by remember { mutableStateOf(0) }
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentRoute = navBackStackEntry?.destination?.route
-    NavigationBar {
-        items.forEachIndexed { index, item ->
+    NavigationBar(
+        containerColor = MaterialTheme.colorScheme.surface
+
+    ) {
+        items.forEachIndexed { _, item ->
             NavigationBarItem(
                 icon = {Icon(painterResource(item.icon), contentDescription = null)},
                 label = { Text(item.label)},

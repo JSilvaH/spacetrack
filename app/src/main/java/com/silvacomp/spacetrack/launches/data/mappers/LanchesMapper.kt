@@ -11,13 +11,14 @@ fun Launch.toDomain() = LaunchDomain(
     name = name,
     numberCores = cores.size,
     numberCrewMembers = crew.size,
-    launchesSuccessFull = success?: false
+    launchesSuccessFull = success?: false,
+    imageLaunch = links.patch.small ?: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
 
 )
 
 fun Launch.toLaunchHome() = LatestLaunchHome(
     reused = fairings?.reused ?: false,
-    image = links.patch.small,
+    image = links.patch.small ?: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg",
     name = name,
     capsules = capsules.size,
     cores = cores.size,

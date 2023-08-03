@@ -54,6 +54,7 @@ fun CardRocket(rocket: RocketDomain) {
             AsyncImage(
                 model = rocket.imageRocket[0],
                 contentDescription = "Image falcon",
+                modifier = Modifier.fillMaxSize(),
                 contentScale = ContentScale.Crop
             )
         }
@@ -72,6 +73,7 @@ fun CardRocket(rocket: RocketDomain) {
                 modifier = Modifier
                     .padding(top = 10.dp)
                     .fillMaxWidth()
+                    .background(Color.Black)
             ) {
                 Text(
                     text = stringResource(id = R.string.height),
@@ -79,7 +81,8 @@ fun CardRocket(rocket: RocketDomain) {
                         .weight(1f)
                         .fillMaxWidth(),
                     textAlign = TextAlign.Center,
-                    fontWeight = FontWeight.Bold
+                    fontWeight = FontWeight.Bold,
+                    color = Color.White
                 )
 
                 Text(
@@ -88,7 +91,8 @@ fun CardRocket(rocket: RocketDomain) {
                         .weight(1f)
                         .fillMaxWidth(),
                     textAlign = TextAlign.Center,
-                    fontWeight = FontWeight.Bold
+                    fontWeight = FontWeight.Bold,
+                    color = Color.White
                 )
 
                 Text(
@@ -97,7 +101,8 @@ fun CardRocket(rocket: RocketDomain) {
                         .weight(1f)
                         .fillMaxWidth(),
                     textAlign = TextAlign.Center,
-                    fontWeight = FontWeight.Bold
+                    fontWeight = FontWeight.Bold,
+                    color = Color.White
                 )
 
             }
@@ -105,13 +110,15 @@ fun CardRocket(rocket: RocketDomain) {
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
+                    .background(Color.Black)
             ) {
                 Text(
                     text = "${rocket.heightRocket} mts",
                     modifier = Modifier
                         .weight(1f)
                         .fillMaxWidth(),
-                    textAlign = TextAlign.Center
+                    textAlign = TextAlign.Center,
+                    color = Color.White
                 )
 
                 Text(
@@ -119,15 +126,17 @@ fun CardRocket(rocket: RocketDomain) {
                     modifier = Modifier
                         .weight(1f)
                         .fillMaxWidth(),
-                    textAlign = TextAlign.Center
+                    textAlign = TextAlign.Center,
+                    color = Color.White
                 )
 
                 Text(
-                    text = rocket.active.toString(),
+                    text =  if (rocket.active) stringResource(R.string.active) else stringResource(R.string.inactive) ,
                     modifier = Modifier
                         .weight(1f)
                         .fillMaxWidth(),
-                    textAlign = TextAlign.Center
+                    textAlign = TextAlign.Center,
+                    color = Color.White
                 )
 
             }

@@ -8,6 +8,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
@@ -18,6 +19,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.silvacomp.spacetrack.R
+import com.silvacomp.spacetrack.common.unixToDate
 import com.silvacomp.spacetrack.launches.data.mappers.toDomain
 import com.silvacomp.spacetrack.launches.data.remote.*
 import com.silvacomp.spacetrack.launches.domain.model.LaunchDomain
@@ -65,7 +67,7 @@ fun CardLaunches(launch: LaunchDomain) {
                         textAlign = TextAlign.Center
                     )
                     Text(
-                        text = getTime(launch.dateUnix),
+                        text = launch.dateUnix.unixToDate(),
                         color = Color.White,
                     )
 
@@ -132,7 +134,8 @@ fun CardLaunches(launch: LaunchDomain) {
                     }
 
                     Column(
-                        modifier = Modifier.weight(1f)
+                        modifier = Modifier.weight(1f),
+                        horizontalAlignment = Alignment.CenterHorizontally
                     ) {
                         Text(
                             text = stringResource(id = R.string.launch_success),
@@ -141,12 +144,18 @@ fun CardLaunches(launch: LaunchDomain) {
                             modifier = Modifier.fillMaxWidth(),
                             textAlign = TextAlign.Center
                         )
+                        if (launch.launchesSuccessFull){
+                            Image(
+                                painter = painterResource(id = R.drawable.success),
+                                contentDescription = null
+                            )
+                        }else {
+                            Image(
+                                painter = painterResource(id = R.drawable.unsuccess),
+                                contentDescription = null
+                            )
+                        }
 
-                        Text(
-                            text = launch.launchesSuccessFull.toString(),
-                            modifier = Modifier.fillMaxWidth(),
-                            textAlign = TextAlign.Center
-                        )
 
                     }
                 }
@@ -158,11 +167,7 @@ fun CardLaunches(launch: LaunchDomain) {
 
 }
 
-private fun getTime(unixTime: Int): String {
-    val simpleDate = SimpleDateFormat("dd/mm/yyyy", Locale.getDefault())
-    return simpleDate.format(unixTime)
 
-}
 
 @Preview
 @Composable

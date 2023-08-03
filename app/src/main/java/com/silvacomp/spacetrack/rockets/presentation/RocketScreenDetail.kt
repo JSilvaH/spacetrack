@@ -198,16 +198,7 @@ fun RocketScreenDetailContent(modifier: Modifier,rocket: RocketDomain) {
         }
 
         }
-        Button(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(horizontal = 10.dp),
-            onClick = {
 
-            }
-        ){
-            Text(text = "ACEPTAR")
-        }
 
     }
 }

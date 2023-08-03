@@ -1,14 +1,34 @@
 <resources>
     <string name="app_name">SpaceTrack</string>
-    <string name="name_launch">name</string>
-    <string name="crew_members">crew members</string>
-    <string name="flight_number">Flight number</string>
-    <string name="launch_success">success</string>
-    <string name="launched">Launched</string>
-    <string name="cores">Cores</string>
-    <string name="height">Height</string>
-    <string name="weight">Weight</string>
-    <string name="status">Status</string>
-    <string name="title_activity_rocket_deatil">RocketDeatilActivity</string>
-    <string name="title_activity_rocket_screen_detail">RocketScreenDetail</string>
+    <string name="name_launch">Nombre</string>
+    <string name="launch_success">Exito</string>
+    <string name="launched">Lanzado</string>
+    <string name="height">Altura</string>
+    <string name="weight">Peso</string>
+    <string name="status">Estado</string>
+    <string name="title_activity_rocket_screen_detail">Detalle de Cohete</string>
+    <string name="crew_members">Tripulantes</string>
+    <string name="flight_number">Numero lanzamiento:</string>
+    <string name="cores">Nucleos</string>
+    <string name="title_activity_rocket_deatil">Detalle de Cohete</string>
+    <string name="hellow">Bienvenido…</string>
+    <string name="launches">Lanzamientos spaceX</string>
+    <string name="description">Descripcion de imagen</string>
+    <string name="members">%1$s tripulantes</string>
+    <string name="date_launch">Fecha:</string>
+    <string name="lastlaunches">Ultimo lanzamiento</string>
+    <string name="nextlaunch">Siguiente lanzamiento</string>
+    <string name="title_activity_crew" translatable="false">CrewActivity</string>
+    <string name="description_astronauts">Foto de astronauta</string>
+    <string name="name_member">Nombre: </string>
+    <string name="agency">"Agencia: "</string>
+    <string name="missions">"Misiones: "</string>
+    <string name="title_activity_dragon" translatable="false">DragonActivity</string>
+    <string name="dragon">Dragon</string>
+    <string name="mass">Masa</string>
+    <string name="diameter">Diametro</string>
+    <string name="active">Activo</string>
+    <string name="inactive">Inactivo</string>
+    <string name="title_activity_launchpad" translatable="false">LaunchpadActivity</string>
+    <string name="launchpads">Launchpads</string>
 </resources>

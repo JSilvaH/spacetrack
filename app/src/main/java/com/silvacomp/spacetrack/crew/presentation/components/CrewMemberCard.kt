@@ -1,83 +1,92 @@
 package com.silvacomp.spacetrack.crew.presentation.components
 
-import android.widget.Space
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.Button
-import androidx.compose.material3.ButtonDefaults
-import androidx.compose.material3.Text
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
+import androidx.compose.material.Text
+import androidx.compose.material3.Card
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.window.Dialog
-import androidx.compose.ui.zIndex
+import androidx.compose.ui.unit.sp
+import coil.compose.AsyncImage
+import coil.request.ImageRequest
 import com.silvacomp.spacetrack.R
+import com.silvacomp.spacetrack.common.CrewMember.getCrew
 import com.silvacomp.spacetrack.crew.data.remote.CrewMember
 
 @Composable
 fun CardCrewMember(
-    onDismiss: () -> Unit
+    crewMember: CrewMember
 ) {
-    Dialog(onDismissRequest = { onDismiss()}) {
-        Box(modifier = Modifier
-            .width(300.dp)
-            .height(500.dp)
-        ){
-            Image(
-                painter = painterResource(R.drawable.logo),
-                contentDescription = null,
-                modifier = Modifier.size(100.dp)
-                    .align(Alignment.TopCenter)
-                    .zIndex(1f)
+    Card(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(top = 10.dp)
+            .size(200.dp)
+    ) {
+        Row {
+            AsyncImage(
+                model = ImageRequest.Builder(LocalContext.current)
+                    .data(crewMember.image)
+                    .build(),
+                contentDescription = stringResource(id = R.string.description_astronauts),
             )
-            Column(
-                modifier = Modifier.size(400.dp)
-            ) {
-                Spacer(modifier = Modifier.height(36.dp))
-                Box(modifier = Modifier
-                    .width(300.dp)
-                    .height(200.dp)
-                    .background(
-                        color = Color.White,
-                        shape = RoundedCornerShape(10.dp)
+            Column(modifier = Modifier.fillMaxWidth(),horizontalAlignment = Alignment.CenterHorizontally) {
+                    Image(
+                        painter = painterResource(id = returnLogoAgency(crewMember.agency)),
+                        contentDescription = "nasa",
+                        modifier = Modifier.size(70.dp)
                     )
-                ){
-                    Column(
-                        modifier = Modifier.padding(60.dp),
-                        horizontalAlignment = Alignment.CenterHorizontally
-                    ) {
-                        Spacer(modifier = Modifier.height(16.dp))
-                        //AQUI VA EL Contenido de la carda
-                        Row(
-                            modifier = Modifier.fillMaxWidth()
-                        ) {
-                            Spacer(modifier = Modifier.width(8.dp))
-                            Button(
-                                onClick = onDismiss,
-//                                shape = Shapes.large,
-                                colors = ButtonDefaults.buttonColors(Color.Black),
-                                modifier = Modifier
-                                    .fillMaxWidth()
-                                    .weight(1f)
-                                    .clip(RoundedCornerShape(5.dp))
-                            ) {
-                                Text(
-                                    text = "Ok",
-                                    color = Color.White
-                                )
-                            }
-                        }
-                    }
+                    Text(text = crewMember.name, fontSize = 28.sp)
+
+                Row() {
+                    Text(
+                        text = stringResource(id = R.string.agency),
+                        color = Color.Black,
+                        fontWeight = FontWeight.Bold
+                    )
+                    Text(text = crewMember.agency)
                 }
+
+                Row() {
+                    Text(
+                        text = stringResource(id = R.string.missions),
+                        color = Color.Black,
+                        fontWeight = FontWeight.Bold
+                    )
+                    Text(text = crewMember.launches.size.toString())
+                }
+
+
             }
         }
+    }
+}
+
+private fun returnLogoAgency(agency: String): Int{
+
+   return when(agency){
+        "ESA" -> R.drawable.esa
+        "NASA" -> R.drawable.nasa
+        "JAXA" -> R.drawable.jaxa
+        "SpaceX" -> R.drawable.spacex
+       "Axiom Space" -> R.drawable.axiomspace
+       "Roscosmos" -> R.drawable.roscosmos
+       else -> R.drawable.ic_home
+
     }
 }
 
@@ -85,7 +94,5 @@ fun CardCrewMember(
 @Preview
 @Composable
 fun CardCrewMemberPrev() {
-    CardCrewMember(){
-
-    }
+    CardCrewMember(getCrew())
 }

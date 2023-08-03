@@ -6,5 +6,6 @@ data class LaunchDomain(
     val name: String,
     val numberCores: Int,
     val numberCrewMembers: Int,
-    val launchesSuccessFull: Boolean
+    val launchesSuccessFull: Boolean,
+    val imageLaunch: String,
 )
