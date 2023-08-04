@@ -28,5 +28,8 @@
     <string name="diameter">Diameter</string>
     <string name="active">Active</string>
     <string name="inactive">Inactive</string>
-    <string name="launchpads">Launchpads</string>
+    <string name="launchpads">LaunchPads</string>
+    <string name="home">home</string>
+    <string name="rockets">Rockets</string>
+    <string name="launchesBottom">Launches</string>
 </resources>

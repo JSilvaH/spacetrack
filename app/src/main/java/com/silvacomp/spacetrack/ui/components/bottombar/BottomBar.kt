@@ -7,6 +7,7 @@ import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import com.silvacomp.spacetrack.ui.components.bottombar.BottomNavigationItem
@@ -28,7 +29,7 @@ fun BottomBarSpaceTrack(navController: NavController) {
         items.forEachIndexed { _, item ->
             NavigationBarItem(
                 icon = {Icon(painterResource(item.icon), contentDescription = null)},
-                label = { Text(item.label)},
+                label = { Text(stringResource(id = item.label))},
                 selected = currentRoute == item.screen,
                 onClick = {
                     navController.navigate(item.screen){

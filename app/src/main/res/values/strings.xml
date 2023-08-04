@@ -31,4 +31,7 @@
     <string name="inactive">Inactivo</string>
     <string name="title_activity_launchpad" translatable="false">LaunchpadActivity</string>
     <string name="launchpads">Launchpads</string>
+    <string name="home">Inicio</string>
+    <string name="rockets">Cohetes</string>
+    <string name="launchesBottom">Lanzamientos</string>
 </resources>
