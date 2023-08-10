@@ -2,8 +2,10 @@ package com.silvacomp.spacetrack.home.presentation
 
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.silvacomp.spacetrack.R
 import com.silvacomp.spacetrack.common.Result
 import com.silvacomp.spacetrack.launches.domain.repository.LaunchesRepository
 import com.silvacomp.spacetrack.launches.presentation.LatestLaunchState
@@ -32,7 +34,7 @@ class HomeScreenViewModel @Inject constructor(
                   is Result.Success -> {
                       _stateLatestLaunch.value = LatestLaunchState(latestLaunch = it.data)
                   }
-                  is Result.Error -> _stateLatestLaunch.value = LatestLaunchState(error = it.message ?: "error")
+                  is Result.Error -> _stateLatestLaunch.value = LatestLaunchState(error = it.message ?: "Loading ...")
                   is Result.Loading -> _stateLatestLaunch.value = LatestLaunchState(isLoading = true)
               }
           }
@@ -41,7 +43,7 @@ class HomeScreenViewModel @Inject constructor(
                     is Result.Success -> {
                         _nextLaunchState.value = NextLaunchState(nextLaunch = it.data)
                     }
-                    is Result.Error -> _nextLaunchState.value = NextLaunchState(error = it.message ?: "Error")
+                    is Result.Error -> _nextLaunchState.value = NextLaunchState(error = it.message ?: "Loading ...")
                     is Result.Loading -> _nextLaunchState.value = NextLaunchState(isLoading = true)
                 }
             }

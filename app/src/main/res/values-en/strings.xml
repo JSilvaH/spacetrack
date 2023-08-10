@@ -32,4 +32,6 @@
     <string name="home">home</string>
     <string name="rockets">Rockets</string>
     <string name="launchesBottom">Launches</string>
+    <string name="loading">Cargando ...</string>
+    <string name="search">Search</string>
 </resources>

@@ -34,4 +34,6 @@
     <string name="home">Inicio</string>
     <string name="rockets">Cohetes</string>
     <string name="launchesBottom">Lanzamientos</string>
+    <string name="loading">Cargando ...</string>
+    <string name="search">Search</string>
 </resources>
