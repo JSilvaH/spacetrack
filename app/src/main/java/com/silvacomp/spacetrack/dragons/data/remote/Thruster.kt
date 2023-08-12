@@ -1,8 +1,9 @@
 package com.silvacomp.spacetrack.dragons.data.remote
 
 
+import androidx.annotation.Keep
 import com.squareup.moshi.Json
-
+@Keep
 data class Thruster(
     @Json(name = "amount")
     val amount: Int,

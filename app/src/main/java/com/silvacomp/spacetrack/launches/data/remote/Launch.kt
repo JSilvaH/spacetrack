@@ -1,8 +1,10 @@
 package com.silvacomp.spacetrack.launches.data.remote
 
+import androidx.annotation.Keep
 import com.silvacomp.spacetrack.launches.domain.model.LaunchDomain
 import com.squareup.moshi.Json
 
+@Keep
 data class Launch(
     @field:Json(name = "auto_update") val auto_update: Boolean,
     @field:Json(name = "capsules") val capsules: List<Any>,

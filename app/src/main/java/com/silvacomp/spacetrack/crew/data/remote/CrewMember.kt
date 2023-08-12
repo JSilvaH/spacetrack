@@ -1,8 +1,9 @@
 package com.silvacomp.spacetrack.crew.data.remote
 
 
+import androidx.annotation.Keep
 import com.squareup.moshi.Json
-
+@Keep
 data class CrewMember(
     @Json(name = "agency")
     val agency: String,

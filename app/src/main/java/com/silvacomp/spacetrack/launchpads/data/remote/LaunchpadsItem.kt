@@ -1,8 +1,9 @@
 package com.silvacomp.spacetrack.launchpads.data.remote
 
 
+import androidx.annotation.Keep
 import com.squareup.moshi.Json
-
+@Keep
 data class LaunchpadsItem(
     @Json(name = "details")
     val details: String,

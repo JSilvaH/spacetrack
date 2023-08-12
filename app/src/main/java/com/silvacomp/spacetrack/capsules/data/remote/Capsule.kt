@@ -1,8 +1,9 @@
 package com.silvacomp.spacetrack.capsules.data.remote
 
 
+import androidx.annotation.Keep
 import com.squareup.moshi.Json
-
+@Keep
 data class Capsule(
     @Json(name = "id")
     val id: String,

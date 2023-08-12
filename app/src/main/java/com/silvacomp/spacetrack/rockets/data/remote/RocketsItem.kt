@@ -1,7 +1,9 @@
 package com.silvacomp.spacetrack.rockets.data.remote
 
 
+import androidx.annotation.Keep
 import com.squareup.moshi.Json
+@Keep
 data class RocketsItem(
     @Json(name = "active")
     val active: Boolean,

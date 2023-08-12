@@ -1,8 +1,9 @@
 package com.silvacomp.spacetrack.rockets.data.remote
 
 
+import androidx.annotation.Keep
 import com.squareup.moshi.Json
-
+@Keep
 data class Engines(
     @Json(name = "engine_loss_max")
     val engineLossMax: Int,

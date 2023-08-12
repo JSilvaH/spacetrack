@@ -1,5 +1,8 @@
 package com.silvacomp.spacetrack.launches.data.remote
 
+import androidx.annotation.Keep
+
+@Keep
 data class Core(
     val core: String?=null,
     val flight: Int?=null,
